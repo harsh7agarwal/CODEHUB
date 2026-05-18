@@ -1,0 +1,10 @@
+{
+  "name": "mygithubpro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Clone — monorepo root (scripts delegate to backend/)",
+  "scripts": {
+    "dev": "npm run dev --prefix backend",
+    "start": "npm start --prefix backend"
+  }
+}
