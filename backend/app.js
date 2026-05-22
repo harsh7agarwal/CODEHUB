@@ -12,11 +12,12 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-// API routes: /api/health, /api/... (future)
+// All /api/* routes
 app.use("/api", apiRoutes);
 
-// Legacy/simple URL — same controller, two entry points
+// Simple URLs (no /api prefix) — same controller
 app.get("/health", getHealth);
+app.get("/api/health", getHealth);
 
 app.use(notFound);
 app.use(errorHandler);

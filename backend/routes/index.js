@@ -1,9 +1,10 @@
 import { Router } from "express";
-import healthRoutes from "./health.routes.js";
+import { getHealth } from "../controllers/health.controller.js";
+import { getDbStatus } from "../controllers/db.controller.js";
 
 const router = Router();
 
-// Mount route modules under /api prefix (versioning-ready)
-router.use("/health", healthRoutes);
+router.get("/health", getHealth);
+router.get("/db-status", getDbStatus);
 
 export default router;
